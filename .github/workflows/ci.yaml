@@ -1,0 +1,13 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          sudo apt-get -y install libmysqlclient-dev
+      - uses: open-turo/actions-python/lint@v1
